@@ -32,7 +32,6 @@ A current **maintainer** must then:
       --threshold 2
   ```
 
-
 Another **policy signer** must then counter-sign this policy on their own checked-out repo:
 ```sh
 gittuf policy remote pull
