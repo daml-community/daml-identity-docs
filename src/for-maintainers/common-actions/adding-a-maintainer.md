@@ -6,7 +6,7 @@ Before promoting an organisation to be a **maintainer**, the organisation must d
 
 - The keyholder's GitHub **username** and **id**
 
-> NOTE: A user's GitHub id can easily be found from their username via the following http endpoint:
+> [!NOTE] A user's GitHub id can easily be found from their username via the following http endpoint:
 > ```sh
 > curl -s https://api.github.com/users/<username>
 > | jq '.id'
