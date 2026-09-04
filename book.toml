@@ -2,3 +2,6 @@
 title = "daml-identity"
 authors = ["Obsidian Systems"]
 language = "en"
+
+[output.html]
+git-repository-url = "https://github.com/daml-community/daml-identity"
