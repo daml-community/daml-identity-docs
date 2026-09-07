@@ -3,6 +3,10 @@
 [`daml-identity`](./_main.md)
 
 - [Repository Specification](./repo-structure/_main.md)
+    - [Setup](./repo-structure/setup/_main.md)
+        - [Windows](./repo-structure/setup/windows.md)
+        - [Linux](./repo-structure/setup/linux.md)
+        - [macOS](./repo-structure/setup/macOS.md)
     - [File Structure](./repo-structure/files.md)
     - [Gittuf Policy](./repo-structure/gittuf.md)
 - [For Organisations](./for-orgs/_main.md)
