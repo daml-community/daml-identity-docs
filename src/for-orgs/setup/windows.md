@@ -1,12 +1,13 @@
-# Linux Setup
-Install `gnupg` and `git` through your distribution's package manager. To install gittuf on linux either install through your distribution's package manager, or install [go](https://go.dev/), then run the following commands:
+# Windows Setup
+Install `gpg4win`, `git` and `gittuf` from winget by running the following from powershell:
 
 ```sh
-go install github.com/gittuf/gittuf@latest
-go install github.com/gittuf/gittuf/internal/git-remote-gittuf@latest
+winget install GnuPG.Gpg4win
+winget install Git.Git
+winget install gittuf.gittuf
+winget install gittuf.git-remote-gittuf
+git config --global gpg.program $(Resolve-Path (Get-Command gpg | Select-Object -Expand Source) | Select-Object -Expand Path)
 ```
-
-To install the latest version from source.
 
 ## Configuring `git` and `gpg`
 Git must be configured to use `gpg` to sign commits. To do so we need to:
@@ -40,13 +41,21 @@ To configure git properly, edit your git configuration file so that the followin
   email = "<email>"
   name = "<name>"
   signingKey = "AAAA AAAA AAAA AAAA AAAA  AAAA AAAA AAAA AAAA AAAA"
+
 ```
+
+> [NOTE] Your user git configuration file lives in `C:\Users\<user>\.gitconfig`
+> It can be made and edited with the following commands:
+> ```
+> notepad C:\Users\<user>\.gitconfig
+```
+
 
 ## Adding gpg keys to GitHub
 To export your gpg public key and copy it to the clipboard run:
 
 ```
-gpg --export --armor "<fingerprint>" | wl-copy
+gpg --export --armor "<fingerprint>" | Set-Clipboard
 ```
 
 And follow the process outlined [here](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account)
