@@ -27,7 +27,7 @@ uid     ....
 
 The fingerprint is shown on the second line above. Make a note of this, or run `gpg --fingerprint`.
 
-To configure git properly, edit your git configuration file so that the following lines are present:
+To configure git properly, edit your git configuration file (`~/.config/git/config`) so that the following lines are present:
 
 ```
 [commit]
