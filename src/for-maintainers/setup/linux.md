@@ -45,7 +45,7 @@ Follow the setup instructions selecting:
 To export the subkey run:
 ```sh
 gpg --list-secret-keys
-gpg --export-secret-subkeys <SUBKEYFINGERPRINT>! > subkey.asc
+gpg --export-secret-subkeys <SUBKEYFINGERPRINTNOSPACES>! > subkey.asc
 ```
 
 ### Importing the subkey
