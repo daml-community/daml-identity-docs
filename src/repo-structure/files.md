@@ -42,10 +42,12 @@ A person can contain the following data:
   "name": "Alice",
   "valid": [
     {
+      "roles": ["auditor", "publisher"],
       "from": "2020-01-01",
       "to": "2021-01-01"
     },
     {
+      "roles": ["auditor"],
       "from": "2026-01-01",
       "to": "2027-01-01"
     }
