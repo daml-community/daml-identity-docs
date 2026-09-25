@@ -10,36 +10,18 @@ To install the latest version from source.
 
 ## Configuring `git` and `gpg`
 We must first generate a `gpg` key, if you do not already have one, to represent your organisation. It is important that YOU DO NOT LOSE THIS KEY. We would advise that this key is kept somewhere secure by the organisation. Once this key is generated, the most secure practice is then to distribute a subkey to anyone that wishes to use this key, and to never use the key directly. The following documents the process of:
-1. Generating an organisation `gpg` key
-2. Adding a subkey to this key
-3. Exporting the subkey
-4. Importing the subkey
-5. Adding the subkey to your `git` config
-6. Adding the subkey to your `github` account
+1. Generating an organisation `gpg` key and creating a subkey
+2. Exporting the subkey
+3. Importing the subkey
+4. Adding the subkey to your `git` config
+5. Adding the subkey to your `github` account
 
-### Generating an organisation `gpg` key
-To generate a `gpg` key, run:
+### Generating an organisation `gpg` key and creating a subkey
+To generate a `gpg` key and add a subkey, run:
 ```sh
-gpg --full-generate-key
+gpg --quick-generate-key "Org Name" rsa3072 default never
+gpg --quick-add-key '<pub-key-fingerprint>' rsa3072 sign 1y
 ```
-
-And follow the instruction prompt, selecting `(1) RSA and RSA`, entering your organisation's name, a secure password, and NO expiration date. After completing the instructions, the resulting screen will show the public key fingerprint:
-```
-pub     rsa3072 2026-09-07 [SC]
-        AAAA AAAA AAAA AAAA AAAA  AAAA AAAA AAAA AAAA AAAA
-uid     ....
-```
-
-### Adding a subkey to this key
-To add a subkey to the key, run:
-```sh
-gpg --expert --edit-key 'AAAA AAAA AAAA AAAA AAAA  AAAA AAAA AAAA AAAA AAAA' # your key fingerprint here
-gpg> addKey
-```
-
-Follow the setup instructions selecting:
-- (4) RSA (sign only)
-- A sensible validity period (1 year?)
 
 ### Exporting the subkey
 To export the subkey run:
